@@ -1,0 +1,134 @@
+/* charte graphique */
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  --noir-cds: #222222;
+  --bleu-cds: #4169E1;
+  --bleu-dimmed: #d9e1f9;
+  --bleu-dimmedstrong: #ecf0fc;
+  --main-bg: #fafafa;
+}
+h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
+  font-family: "Ubuntu", sans-serif;
+}
+
+
+/* style */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--main-bg);
+}
+section#main {
+  min-height: calc(100vh - 252px);
+}
+
+/* footer */
+footer {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: var(--noir-cds);
+  color: var(--main-bg);
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+#madeby {
+  font-size: .7em;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  opacity: .7;
+}
+#facebook img {
+  height: 100%;
+}
+.flex-item-left:hover, .flex-item-center:hover, .flex-item-right:hover {
+  opacity: 1;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 30px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.flex-item-left, .flex-item-center, .flex-item-right {
+  padding: 10px;
+  flex: 33.3%;
+  height: 50px;
+  opacity: .7;
+  transition: all .5s;
+}
+
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-center, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+/* header */
+header #title {
+  display: flex;
+  height: 110px;
+  background-color: var(--noir-cds);
+  color: var(--main-bg);
+}
+header h1 {
+  line-height: 75px;
+  font-size: 23px;
+}
+header img {
+  height: 100px;
+  filter: invert(1)
+}
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: var(--noir-cds);
+}
+nav a {
+  flex: 20%;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--noir-cds);
+  color: var(--main-bg);
+  transition: all .5s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav a:hover {
+  background-color: var(--bleu-cds);
+}
+
+@media (max-width: 800px) {
+  nav a {
+    flex: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  header #title {
+    height: 35px;
+  }
+  header h1 {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  header img {
+    height: 30px;
+    filter: invert(1)
+  }
+}

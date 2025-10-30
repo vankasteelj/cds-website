@@ -1,0 +1,8 @@
+accueil: présentation courte que c'est un gn belge (mots clés) + les prochains événements
+lore+timeline (TI): les événements historiques jusqu'ici + popup pour les articles/photos
+documents (TO): NI, règles
+univers: docs univers et les publis picploc
+nos événements (TO): event
+qui sommes-nous?: équipe
+
++ haut de page: menu
