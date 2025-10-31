@@ -12,7 +12,6 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-family: "Ubuntu", sans-serif;
 }
 
-
 /* style */
 body {
   margin: 0;
@@ -20,8 +19,11 @@ body {
   overflow-x: hidden;
   background: var(--main-bg);
 }
-section#main {
+#main {
   min-height: calc(100vh - 252px);
+}
+img {
+  max-width: 100%;
 }
 
 /* footer */

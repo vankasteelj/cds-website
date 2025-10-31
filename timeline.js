@@ -93,6 +93,7 @@ for (i in timeline) {
   $('.ag-timeline_list').append(card)
 }
 
+// taken from https://codepen.io/alvarotrigo/pen/yLzBJaN
 (function ($) {
   $(function () {
 
