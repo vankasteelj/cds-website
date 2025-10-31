@@ -105,9 +105,14 @@ const popup = (type, content) => {
   }
 
   $('#popup').show()
+  document.documentElement.style.overflow = 'hidden'
+  document.body.scroll = 'no'
+
   $('#popupbackground').off('click').on('click', () => {
     $('#popup').hide()
     $('#popupcontent').html('')
+    document.documentElement.style.overflow = 'scroll'
+    document.body.scroll = 'yes'
   })
 }
 
