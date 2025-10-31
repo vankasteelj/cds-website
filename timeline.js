@@ -27,7 +27,7 @@ const timeline = [
   },
   {
     date: `2010`,
-    title: `12 sepembre 2010`,
+    title: `12 septembre 2010`,
     content: `Démantèlement du "Réseau Cordélia", un réseau de capture et torture d'ENI. <br>Scandale sur la perception des ENI dans la société égrégore.`
   },
   {

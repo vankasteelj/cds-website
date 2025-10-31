@@ -12,6 +12,16 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-family: "Ubuntu", sans-serif;
 }
 
+.incipit {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  color: var(--bleu-cds);
+  text-align: center;
+  font-style: italic;
+  padding: 30px;
+  font-weight: 500;
+}
+
 /* style */
 body {
   margin: 0;
@@ -21,6 +31,18 @@ body {
 }
 #main {
   min-height: calc(100vh - 252px);
+  width: 80%;
+  margin: 0 auto;
+}
+#noscript {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  top: 0;
 }
 img {
   max-width: 100%;
