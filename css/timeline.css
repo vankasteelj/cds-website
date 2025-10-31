@@ -33,6 +33,23 @@
 }
 #popupcontent img {
   max-width: none;
+  height: 80vh;
+}
+
+@media (max-width: 700px) {
+  #popupcontent {
+   width: 96vw;
+   left: 2vw;
+   height: 60vh;
+   top: 20vh; 
+  }
+  #popupclose {
+    top: calc(20vh - 60px);
+    right: calc(2vw - 30px);
+  }
+  #popupcontent img {
+    height: 60vh;
+  }
 }
 
 /* timeline */

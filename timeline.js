@@ -99,7 +99,7 @@ for (i in timeline) {
 
 const popup = (type, content) => {
   if (type === "image") {
-    $('#popupcontent').append(`<img style="height:80vh" src="${content}">`)
+    $('#popupcontent').append(`<img src="${content}">`)
   } else if (type === "html") {
     
   }
