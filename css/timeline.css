@@ -1,3 +1,40 @@
+/* popup */
+#popup {
+  display: none;
+}
+#popupbackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--noir-cds);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+#popupclose {
+  color: white;
+  top: calc(10vh - 60px);
+  right: calc(5vw - 30px);
+  position: fixed;
+  padding: 30px;
+  cursor: pointer;
+}
+#popupcontent {
+  z-index: 101;
+  position: fixed;
+  top: 10vh;
+  left: 5vw;
+  overflow: scroll;
+  width: 90vw;
+  height: 80vh;
+  background: var(--main-bg);
+  text-align: center;
+}
+#popupcontent img {
+  max-width: none;
+}
+
 /* timeline */
 .ag-timeline_title-box h2 {
   font-size: 30px;
@@ -176,7 +213,17 @@
   font-size: 20px;
   color: var(--noir-cds);
 }
-
+.ag-timeline-card_popup {
+  opacity: .6;
+  right: 5px;
+  position: absolute;
+  bottom: 2px;
+  font-size: .9em;
+  cursor: pointer;
+}
+.ag-timeline-card_popup::before {
+  content: "+ ";
+}
 
 @media only screen and (max-width: 979px) {
   .ag-timeline_line {
@@ -244,7 +291,7 @@
   }
 
   .ag-timeline-card_info {
-    padding: 10px 15px;
+    padding: 20px 15px;
   }
   .ag-timeline-card_desc {
     font-size: 14px;

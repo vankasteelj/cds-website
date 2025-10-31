@@ -3,7 +3,10 @@ const timeline = [
   {
     date: `2013`,
     title: `22 novembre 2013`,
-    content: `Élections législatives communautaires (Mandat 2014-2017).`
+    content: `Élections législatives communautaires (Mandat 2014-2017).`,
+    popup_type: `image`,
+    popup_title: `Lire l'article de la Gazette`,
+    popup_content: `./images/gazette/20240930_merlin.jpg`
   },
   {
     date: `2013`,
@@ -84,6 +87,7 @@ for (i in timeline) {
         `<div class="ag-timeline-card_info">`+
           `<div class="ag-timeline-card_title">${item.title}</div>`+
           `<div class="ag-timeline-card_desc">${item.content.length > 130 ? item.content : item.content + ' &nbsp;'.repeat((130 - item.content.length)/2+1)}</div>`+
+          (item.popup_type ? `<div class="ag-timeline-card_popup" onclick="popup('${item.popup_type}', '${item.popup_content}')">${item.popup_title}</div>` : '')+
         `</div>`+
       `</div>`+
       `<div class="ag-timeline-card_arrow"></div>`+
@@ -91,6 +95,20 @@ for (i in timeline) {
   `</div>`
 
   $('.ag-timeline_list').append(card)
+}
+
+const popup = (type, content) => {
+  if (type === "image") {
+    $('#popupcontent').append(`<img style="height:80vh" src="${content}">`)
+  } else if (type === "html") {
+    
+  }
+
+  $('#popup').show()
+  $('#popupbackground').off('click').on('click', () => {
+    $('#popup').hide()
+    $('#popupcontent').html('')
+  })
 }
 
 // taken from https://codepen.io/alvarotrigo/pen/yLzBJaN
