@@ -324,7 +324,7 @@ const searchTimeline = () => {
     }
     $('.js-timeline_item').filter(function () {
       $(this).hide()
-      return $(this).text().toLowerCase().indexOf(text) > -1
+      return $(this).text().toLowerCase().indexOf(text.toLowerCase()) > -1
     }).show()
   }
 
