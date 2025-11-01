@@ -15,7 +15,7 @@ const header = `
   <a href="timeline.html">Timeline</a>
   <a href="documents.html">Documents</a>
   <a>Nos événements</a>
-  <a>Qui sommes-nous&nbsp;?</a>
+  <a href="equipe.html">Qui sommes-nous&nbsp;?</a>
 </nav>
 `
 
