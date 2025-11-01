@@ -6,7 +6,10 @@ const timeline = [
     content: 'Merlin est élu bourgmestre de Latet.',
     popup_type: `images`,
     popup_title: `Lire l'article de la Gazette`,
-    popup_content: [`./images/gazette/20240930_merlin.jpg`, `./images/gazette/20240930_merlin2.jpg`]
+    popup_content: [
+      `./images/gazette/20240930_merlin.jpg`, 
+      `./images/gazette/20240930_merlin2.jpg`
+    ]
   },
   {
     date: '2024',
@@ -34,6 +37,9 @@ const timeline = [
     date: `2013`,
     title: `22 novembre 2013`,
     content: `Élections législatives communautaires (Mandat 2014-2017).`,
+    popup_type: 'html',
+    popup_title: `Voir la vidéo`,
+    popup_content: `<iframe width="560" height="315" src="https://www.youtube.com/embed/w3Vla0r3oIk?si=4Mc-lbKzSHvXT6sw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
   },
   {
     date: `2013`,
@@ -201,7 +207,7 @@ const popup = (type, i) => {
     })
 
   } else if (type === "html") {
-    $('#popupcontent').append(content)
+    $('#popupcontent').append(`<div id="customhtml">${content}</div>`)
   }
 
   $('#popup').show()

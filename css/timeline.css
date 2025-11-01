@@ -25,7 +25,6 @@
   position: fixed;
   top: 10vh;
   left: 5vw;
-  overflow: scroll;
   width: 90vw;
   height: 80vh;
   background: var(--main-bg);
@@ -36,13 +35,17 @@
   max-width: none;
   height: calc(80vh - 4px);
 }
+#popupcontent #customhtml {
+  padding: 10px;
+}
 
 @media (max-width: 700px) {
   #popupcontent {
    width: 96vw;
    left: 2vw;
    height: 60vh;
-   top: 20vh; 
+   top: 20vh;
+   overflow: scroll;
   }
   #popupclose {
     top: calc(20vh - 60px);
@@ -74,6 +77,11 @@
   cursor: pointer;
   display: none;
 }
+@media (max-width: 700px) {
+  #searchclose {
+    top: 0px;
+  }
+}
 
 /* Slideshow container */
 #popupcontent > .slideshow-container {
@@ -85,7 +93,6 @@
 }
 .slides {
   display: none;
-  overflow: scroll;
 }
 .prev, .next {
   cursor: pointer;
