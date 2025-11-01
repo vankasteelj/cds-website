@@ -146,8 +146,35 @@ const popup = (type, i) => {
     </div>`
 
     $('#popupcontent').append(elm)
+    
     slideIndex = 1
     showSlides(slideIndex)
+
+    $('html').off('keydown').on('keydown', (e) => {
+      switch (e.key) {
+        case "ArrowLeft":
+          plusSlides(-1)
+          break;
+        case "ArrowRight":
+          plusSlides(1)
+          break;
+      }
+    })
+
+    let clicked = true;
+    $('.slides img').off('click').on('click', () => {
+      clicked = !clicked
+      if (!clicked) {
+        $('.prev,.next').hide(500)
+      } else {
+        $('.prev,.next').show()
+      }
+    })
+    $('#popupcontent').off('mousemove').on('mousemove', () => {
+      clicked = true
+      $('.prev,.next').show()
+    })
+
   } else if (type === "html") {
     $('#popupcontent').append(content)
   }
