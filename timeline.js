@@ -150,6 +150,7 @@ const popup = (type, i) => {
     slideIndex = 1
     showSlides(slideIndex)
 
+    // keyboard arrows to slide prev/next
     $('html').off('keydown').on('keydown', (e) => {
       switch (e.key) {
         case "ArrowLeft":
@@ -161,6 +162,7 @@ const popup = (type, i) => {
       }
     })
 
+    // click to hide buttons prev/next
     let clicked = true;
     $('.slides img').off('click').on('click', () => {
       clicked = !clicked
@@ -173,6 +175,29 @@ const popup = (type, i) => {
     $('#popupcontent').off('mousemove').on('mousemove', () => {
       clicked = true
       $('.prev,.next').show()
+    })
+
+    // swipe to slide
+    let initialTouchX, initialTouchY, finalTouchX, finalTouchY
+    const swipeThreshold = 100
+    $('#popupcontent').off('touchstart').on('touchstart', function (event) {
+      initialTouchX = event.touches[0].clientX
+      initialTouchY = event.touches[0].clientY
+    })
+    $('#popupcontent').off('touchend').on('touchend', function (event) {
+      finalTouchX = event.changedTouches[0].clientX
+      finalTouchY = event.changedTouches[0].clientY
+
+      const horizontalDistance = finalTouchX - initialTouchX
+      const verticalDistance = finalTouchY - initialTouchY
+
+      if (Math.abs(horizontalDistance) > Math.abs(verticalDistance) && Math.abs(horizontalDistance) > swipeThreshold) {
+        if (finalTouchX - initialTouchX < 0) {
+          plusSlides(1)
+        } else {
+          plusSlides(-1)
+        }
+      }
     })
 
   } else if (type === "html") {
