@@ -299,7 +299,67 @@ const plusSlides = (n) => {
       agFlag || requestAnimationFrame(fnUpdateWindow);
       agFlag = true;
     }
-
-
   });
-})(jQuery);
+})(jQuery)
+
+// search in timeline - taken from github.com/vankasteelj/frak
+const searchTimeline = () => {
+  const input = $('#search input')
+  let timestamp = 0
+  let lastSearch = false
+  let searchCount = 0
+  let searchLoop = false
+
+  input.focus()
+
+  // actual search
+  const displayElements = (text) => {
+    if (text) {
+      console.log('Search for', text)
+      $('#searchclose').show()
+    } else {
+      console.log('Reset search')
+      text = ''
+      $('#searchclose').hide()
+    }
+    $('.js-timeline_item').filter(function () {
+      $(this).hide()
+      return $(this).text().toLowerCase().indexOf(text) > -1
+    }).show()
+  }
+
+  // search logic: on keydown check every 500ms is the input has change
+  // fire a search when a new input is available and the person is not actively typing
+  const clearSearch = () => {
+    clearInterval(searchLoop)
+    searchLoop = false
+    searchCount = 0
+    timestamp = 0
+  }
+  const resetSearch = () => {
+    clearSearch()
+    lastSearch = null
+    input.off('keydown')
+    input.val('')
+    displayElements()
+  }
+  const search = () => {
+    const split = input.val().split(' ').join('')
+    if (timestamp === 0 || Date.now() - timestamp < 500 || lastSearch === split) {
+      searchCount++
+      if (searchCount > 10) clearSearch()
+    } else {
+      lastSearch = split
+      // The actual search starts here
+      displayElements(input.val())
+      clearSearch()
+    }
+  }
+  input.on('keydown', (e) => {
+    timestamp = Date.now()
+    if (searchLoop === false) searchLoop = setInterval(search, 500)
+  })
+  $('#searchclose').off('click').on('click', () => {
+    resetSearch()
+  })
+}

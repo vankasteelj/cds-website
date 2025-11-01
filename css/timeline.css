@@ -53,6 +53,28 @@
   }
 }
 
+#search {
+  position: relative;
+}
+#search-input {
+  color: var(--noir-cds);
+  background-color: var(--main-bg);
+  width: 200px;
+  height: 40px;
+  border: 1px solid var(--noir-cds);
+  border-radius: 5px;
+  padding: 20px;
+}
+#searchclose {
+  position: absolute;
+  top: 5px;
+  right: calc(50% - 90px);
+  font-size: 23px;
+  color: rgb(165, 6, 6);
+  cursor: pointer;
+  display: none;
+}
+
 /* Slideshow container */
 #popupcontent > .slideshow-container {
   background: var(--noir-cds);
