@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-family: "Ubuntu", sans-serif;
 }
 
+#main.dyslexic * {
+  font-family: 'OpenDyslexic' !important;
+}
+
 .incipit {
   font-family: "Ubuntu", sans-serif;
   font-size: 20px;
@@ -23,6 +27,15 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
 }
 
 /* style */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/opendyslexic@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/opendyslexic@latest/latin-400-normal.woff) format('woff');
+  size-adjust: 80%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +43,7 @@ body {
   background: var(--main-bg);
 }
 #main {
-  min-height: calc(100vh - 252px);
+  min-height: calc(100vh - 233px);
   width: 80%;
   margin: 0 auto;
 }
@@ -140,6 +153,68 @@ nav a {
 }
 nav a:hover {
   background-color: var(--bleu-cds);
+}
+
+.switch {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 1px;
+  background-color: var(--main-bg);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: var(--bleu-cds);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--bleu-cds);
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.toggle-label {
+  font-family: 'OpenDyslexic';
+  position: relative;
+  margin-left: -135px;
+  top: -2px;
+  color: var(--bleu-dimmed);
+  font-size: .8em;
 }
 
 @media (max-width: 800px) {
