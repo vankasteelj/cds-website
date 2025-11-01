@@ -79,7 +79,7 @@
 }
 @media (max-width: 700px) {
   #searchclose {
-    top: 0px;
+    top: 3px;
   }
 }
 
