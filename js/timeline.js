@@ -109,7 +109,7 @@ for (i in timeline) {
   const item = timeline[i]
   const card = `<div class="js-timeline_item ag-timeline_item">`+
     `<div class="ag-timeline-card_box">`+
-      (i % 2 == 1 ? `<div class="ag-timeline-card_meta-box"><div class="ag-timeline-card_meta">${item.title}</div></div><div class="js-timeline-card_point-box ag-timeline-card_point-box"><div class="ag-timeline-card_point">${item.date}</div></div>` :       `<div class="js-timeline-card_point-box ag-timeline-card_point-box"><div class="ag-timeline-card_point">${item.date}</div></div><div class="ag-timeline-card_meta-box"><div class="ag-timeline-card_meta">${item.title}</div></div>`) +
+      (i % 2 == 1 ? `<div class="ag-timeline-card_meta-box"><div class="ag-timeline-card_meta">${item.title}</div></div><div class="js-timeline-card_point-box ag-timeline-card_point-box"><div class="ag-timeline-card_point">${item.date}</div></div>` : `<div class="js-timeline-card_point-box ag-timeline-card_point-box"><div class="ag-timeline-card_point">${item.date}</div></div><div class="ag-timeline-card_meta-box"><div class="ag-timeline-card_meta">${item.title}</div></div>`) +
     `</div>`+
     `<div class="ag-timeline-card_item">`+
       `<div class="ag-timeline-card_inner">`+
@@ -236,74 +236,70 @@ const plusSlides = (n) => {
 }
 
 // timeline scroll & animation - taken from https://codepen.io/alvarotrigo/pen/yLzBJaN
-(function ($) {
-  $(function () {
-
-    $(window).on('scroll', function () {
-      fnOnScroll();
-    });
-
-    $(window).on('resize', function () {
-      fnOnResize();
-    });
-
-
-    var agTimeline = $('.js-timeline'),
-      agTimelineLine = $('.js-timeline_line'),
-      agTimelineLineProgress = $('.js-timeline_line-progress'),
-      agTimelinePoint = $('.js-timeline-card_point-box'),
-      agTimelineItem = $('.js-timeline_item'),
-      agOuterHeight = $(window).outerHeight(),
-      agHeight = $(window).height(),
-      f = -1,
-      agFlag = false;
-
-    function fnOnScroll() {
-      agPosY = $(window).scrollTop();
-
-      fnUpdateFrame();
-    }
-
-    function fnOnResize() {
-      agPosY = $(window).scrollTop();
-      agHeight = $(window).height();
-
-      fnUpdateFrame();
-    }
-
-    function fnUpdateWindow() {
-      agFlag = false;
-
-      agTimelineLine.css({
-        top: agTimelineItem.first().find(agTimelinePoint).offset().top - agTimelineItem.first().offset().top,
-        bottom: agTimeline.offset().top + agTimeline.outerHeight() - agTimelineItem.last().find(agTimelinePoint).offset().top
-      });
-
-      f !== agPosY && (f = agPosY, agHeight, fnUpdateProgress());
-    }
-
-    function fnUpdateProgress() {
-      var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
-
-      i = agTop + agPosY - $(window).scrollTop();
-      a = agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
-      n = agPosY - a + agOuterHeight / 2;
-      i <= agPosY + agOuterHeight / 2 && (n = i - a);
-      agTimelineLineProgress.css({height: n + "px"});
-
-      agTimelineItem.each(function () {
-        var agTop = $(this).find(agTimelinePoint).offset().top;
-
-        (agTop + agPosY - $(window).scrollTop()) < agPosY + .5 * agOuterHeight ? $(this).addClass('js-ag-active') : $(this).removeClass('js-ag-active');
-      })
-    }
-
-    function fnUpdateFrame() {
-      agFlag || requestAnimationFrame(fnUpdateWindow);
-      agFlag = true;
-    }
+const timelineFn = function () {
+  $(window).off('scroll').on('scroll', function () {
+    fnOnScroll();
   });
-})(jQuery)
+
+  $(window).off('resize').on('resize', function () {
+    fnOnResize();
+  });
+
+  var agTimeline = $('.js-timeline'),
+    agTimelineLine = $('.js-timeline_line'),
+    agTimelineLineProgress = $('.js-timeline_line-progress'),
+    agTimelinePoint = $('.js-timeline-card_point-box'),
+    agTimelineItem = $('.js-timeline_item:visible'),
+    agOuterHeight = $(window).outerHeight(),
+    agHeight = $(window).height(),
+    f = -1,
+    agFlag = false;
+
+  function fnOnScroll() {
+    agPosY = $(window).scrollTop();
+    fnUpdateFrame();
+  }
+
+  function fnOnResize() {
+    agPosY = $(window).scrollTop();
+    agHeight = $(window).height();
+
+    fnUpdateFrame();
+  }
+
+  function fnUpdateWindow() {
+    agFlag = false;
+
+    agTimelineLine.css({
+      top: agTimelineItem.first().find(agTimelinePoint).offset().top - agTimelineItem.first().offset().top,
+      bottom: agTimeline.offset().top + agTimeline.outerHeight() - agTimelineItem.last().find(agTimelinePoint).offset().top
+    });
+
+    f !== agPosY && (f = agPosY, agHeight, fnUpdateProgress());
+  }
+
+  function fnUpdateProgress() {
+    var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
+
+    i = agTop + agPosY - $(window).scrollTop();
+    a = agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
+    n = agPosY - a + agOuterHeight / 2;
+    i <= agPosY + agOuterHeight / 2 && (n = i - a);
+    agTimelineLineProgress.css({height: n + "px"});
+
+    agTimelineItem.each(function () {
+      var agTop = $(this).find(agTimelinePoint).offset().top;
+
+      (agTop + agPosY - $(window).scrollTop()) < agPosY + .5 * agOuterHeight ? $(this).addClass('js-ag-active') : $(this).removeClass('js-ag-active');
+    })
+  }
+
+  function fnUpdateFrame() {
+    agFlag || requestAnimationFrame(fnUpdateWindow);
+    agFlag = true;
+  }
+}
+timelineFn()
 
 // search in timeline - taken from github.com/vankasteelj/frak
 const searchTimeline = () => {
@@ -329,6 +325,7 @@ const searchTimeline = () => {
       $(this).hide()
       return $(this).text().toLowerCase().indexOf(text.toLowerCase()) > -1
     }).show()
+    timelineFn()
   }
 
   // search logic: on keydown check every 500ms is the input has change

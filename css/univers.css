@@ -1,0 +1,49 @@
+#abcbook {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#abcbook .letter {
+  flex: 33%;
+}
+#abcbook h3 {
+  text-transform: uppercase;
+  color: var(--bleu-cds);
+}
+#abcbook li {
+  text-transform: capitalize;
+  cursor: pointer;
+  line-height: 1.8em;
+}
+
+#popupcontent {
+  height: auto;
+  text-align: left;
+  max-height: calc(80vh - 4px);
+  overflow: scroll;
+}
+#popupcontent .description {
+  font-style: italic;
+  line-height: 1.5em;
+}
+#popupcontent h3 {
+  color: var(--bleu-cds);
+  text-transform: capitalize;
+}
+#popupcontent br {
+   display: block;
+   margin: 10px 0;
+}
+#popupcontent img {
+  max-width: 400px;
+  position: relative;
+  padding: 1em;
+  height: auto;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  #popupcontent {
+    height: auto;
+    max-height: 60vh;
+  }
+}

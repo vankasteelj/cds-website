@@ -5,7 +5,7 @@
     <meta content="width=device-width" name="viewport" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/univers.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,30 +24,15 @@
         <div id="popupcontent"></div>
       </div>
 
-      <div id="timeline">
-        <div class="ag-timeline-block">
-          <div class="ag-timeline_title-box">
-            <h2>Ligne du temps des événements connus de toustes</h2>
-            <div id="search">
-              <input type="text" placeholder="Rechercher" id="search-input" onclick="searchTimeline()">
-              <div id="searchclose">&#x2716;</div>
-            </div>
-          </div>
-          <section class="ag-section">
-            <div class="ag-format-container">
-              <div class="js-timeline ag-timeline">
-                <div class="js-timeline_line ag-timeline_line">
-                  <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
-                </div>
-                <div class="ag-timeline_list">
-                  <!-- cards come here -->
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <script src="./js/timeline.js"></script>
+      <h2>Présentation de l'Univers</h2>
+      <object data="./pdf/Présentation générale de l'Univers.pdf" type="application/pdf" class="pdf" width="800" height="520">
+        <p><a href="/pdf/Présentation générale de l'Univers.pdf" download>Vous pouvez télécharger ce PDF en cliquant ici</a></p>
+      </object>
+      <h2>Abécédaire</h2>
+      <div id="abcbook">
+        <!-- les entrées vont ici -->
       </div>
+      <script src="./js/abcbook.js"></script>
     </div>
 
     <footer id="footer"></footer>
@@ -56,6 +41,6 @@
     <noscript><div id="noscript">
       <h1>Javascript est désactivé</h1>
       <p>Veuillez activer JS pour utiliser ce site web.</p>
-    </div></noscript> 
+    </div></noscript>
   </body>
 </html>
