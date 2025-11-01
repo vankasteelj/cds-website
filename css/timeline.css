@@ -88,7 +88,6 @@
   font-weight: 400;
 }
 .ag-format-container {
-  width: 1160px;
   margin: 0 auto;
   position: relative;
 }
@@ -343,22 +342,4 @@
   .ag-timeline-card_desc {
     font-size: 14px;
   }
-}
-
-@media only screen and (max-width: 479px) {
-
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .ag-format-container {
-    width: 750px;
-  }
-
-}
-
-@media (min-width: 980px) and (max-width: 1161px) {
-  .ag-format-container {
-    width: 960px;
-  }
-
 }

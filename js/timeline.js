@@ -22,7 +22,7 @@ const timeline = [
   {
     date: '2023',
     title: '24 juin 2023',
-    content: 'Drame au mariage d\'Arwen et Belle : Arwen est morte et a replopé<br>Rupture du "Décret d\'Arwen" par le Parlement Suprême<br>Révolte à Latet : les ENI se soulèvent dans la Cité souterraine',
+    content: 'Drame au mariage d\'Arwen et Belle&nbsp;: Arwen est morte et a replopé.<br>Rupture du "Décret d\'Arwen" par le Parlement Suprême.<br>Révolte à Latet : les ENI se soulèvent dans la Cité souterraine.',
     popup_type: `images`,
     popup_title: `Lire les articles de la Gazette`,
     popup_content: [
