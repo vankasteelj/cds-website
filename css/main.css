@@ -243,10 +243,11 @@ nav a {
   background-color: var(--noir-cds);
   color: var(--main-bg);
   transition: all .5s;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   cursor: pointer;
 }
-nav a:hover {
+nav a:hover,
+nav a.active {
   background-color: var(--bleu-cds);
 }
 

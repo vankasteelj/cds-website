@@ -11,11 +11,11 @@ const header = `
   <span class="toggle-label">Mode dyslexique</span>
 </label>
 <nav>
-  <a href="univers.html">Univers</a>
-  <a href="timeline.html">Timeline</a>
-  <a href="documents.html">Documents</a>
-  <a>Nos événements</a>
-  <a href="equipe.html">Qui sommes-nous&nbsp;?</a>
+  <a id="univers" href="univers.html">Univers</a>
+  <a id="timeline" href="timeline.html">Timeline</a>
+  <a id="documents" href="documents.html">Documents</a>
+  <a id="evenements">Nos événements</a>
+  <a id="equipe" href="equipe.html">Qui sommes-nous&nbsp;?</a>
 </nav>
 `
 
