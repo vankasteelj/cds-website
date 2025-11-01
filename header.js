@@ -13,7 +13,7 @@ const header = `
 <nav>
   <a href="univers.html">Univers</a>
   <a href="timeline.html">Timeline</a>
-  <a>Documents</a>
+  <a href="documents.html">Documents</a>
   <a>Nos événements</a>
   <a>Qui sommes-nous&nbsp;?</a>
 </nav>
