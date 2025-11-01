@@ -1,12 +1,39 @@
 // timeline
 const timeline = [
   {
+    date: '2024', 
+    title: '30 septembre 2024', 
+    content: 'Merlin est élu bourgmestre de Latet.',
+    popup_type: `images`,
+    popup_title: `Lire l'article de la Gazette`,
+    popup_content: [`./images/gazette/20240930_merlin.jpg`, `./images/gazette/20240930_merlin2.jpg`]
+  },
+  {
+    date: '2024',
+    title: '22 avril 2024',
+    content: 'Des affiches "Asphaleia sera entendue" ont été retrouvées placardées partout dans les Cités souterraines, notamment à Latet et Fondcombes.',
+    popup_type: `image`, 
+    popup_title: `Lire l'article de la Gazette`, 
+    popup_content: `./images/gazette/20240422_asphaleia.jpg`
+  },
+  {
+    date: '2023',
+    title: '24 juin 2023',
+    content: 'Drame au mariage d\'Arwen et Belle : Arwen est morte et a replopé<br>Rupture du "Décret d\'Arwen" par le Parlement Suprême<br>Révolte à Latet : les ENI se soulèvent dans la Cité souterraine',
+    popup_type: `images`,
+    popup_title: `Lire les articles de la Gazette`,
+    popup_content: [
+      `./images/gazette/20230624_flash_decret.jpg`,
+      `./images/gazette/20230624_reactions_decret.jpg`,
+      `./images/gazette/20230624_flash_drame_mariage.jpg`,
+      `./images/gazette/20230624_nouvelle_peau_arwen.jpg`,
+      `./images/gazette/20230624_flash_revolte_latet.jpg`
+    ]
+  },
+  {
     date: `2013`,
     title: `22 novembre 2013`,
     content: `Élections législatives communautaires (Mandat 2014-2017).`,
-    popup_type: `image`,
-    popup_title: `Lire l'article de la Gazette`,
-    popup_content: `./images/gazette/20240930_merlin.jpg`
   },
   {
     date: `2013`,
@@ -87,7 +114,7 @@ for (i in timeline) {
         `<div class="ag-timeline-card_info">`+
           `<div class="ag-timeline-card_title">${item.title}</div>`+
           `<div class="ag-timeline-card_desc">${item.content.length > 130 ? item.content : item.content + ' &nbsp;'.repeat((130 - item.content.length)/2+1)}</div>`+
-          (item.popup_type ? `<div class="ag-timeline-card_popup" onclick="popup('${item.popup_type}', '${item.popup_content}')">${item.popup_title}</div>` : '')+
+          (item.popup_type ? `<div class="ag-timeline-card_popup" onclick="popup('${item.popup_type}', '${i}')">${item.popup_title}</div>` : '')+
         `</div>`+
       `</div>`+
       `<div class="ag-timeline-card_arrow"></div>`+
@@ -97,11 +124,32 @@ for (i in timeline) {
   $('.ag-timeline_list').append(card)
 }
 
-const popup = (type, content) => {
+const popup = (type, i) => {
+  const content = timeline[i].popup_content
+  console.log('Open popup (%s) with:', type, content)
   if (type === "image") {
     $('#popupcontent').append(`<img src="${content}">`)
+  } else if (type === "images") {
+    let elm = `<div class="slideshow-container">`
+
+    // slides
+    for (let i in content) {
+      elm += `<div class="slides fade">
+        <div class="numbertext">${parseInt(i) + 1} / ${content.length}</div>
+        <img src="${content[i]}">
+      </div>`
+    }
+
+    elm += `<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    </div>`
+
+    $('#popupcontent').append(elm)
+    slideIndex = 1
+    showSlides(slideIndex)
   } else if (type === "html") {
-    
+    $('#popupcontent').append(content)
   }
 
   $('#popup').show()
@@ -116,7 +164,23 @@ const popup = (type, content) => {
   })
 }
 
-// taken from https://codepen.io/alvarotrigo/pen/yLzBJaN
+// slides javascript from https://www.w3schools.com/howto/howto_js_slideshow.asp
+let slideIndex = 1
+const showSlides = (n) => {
+  let i
+  let slides = document.getElementsByClassName('slides')
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none'
+  }
+  slides[slideIndex-1].style.display = 'block'
+}
+const plusSlides = (n) => {
+  showSlides(slideIndex += n);
+}
+
+// timeline scroll & animation - taken from https://codepen.io/alvarotrigo/pen/yLzBJaN
 (function ($) {
   $(function () {
 
