@@ -24,7 +24,7 @@ const abcbook = {
   b: [
     {
       word: `Bibliothèque`,
-      desc: `Institution communautaire du Bureau des Songes qui protège les Manuscrits et surveille la production de Songes.`
+      desc: `Institution communautaire du Bureau des Songes qui cherche et protège les Manuscrits.`
     },
     {
       word: `Bureau des Songes (BdS)`,
@@ -33,16 +33,20 @@ const abcbook = {
   ],
   c: [
     {
-      word: `Communautés`,
-      desc: `Groupes d’Égrégores définis par une homogénéité linguistique et/ou territoriale, chargés de gérer la population et le Secret.`
+      word: `Chirurgie d'intégration`,
+      desc: `La chirurgie d’intégration (développée par Merlin avec l’aide des avancées de la médecine rêveuse) : permet de transformer un·e ENI en Égrégore intégrable. Attention possible uniquement dans certains cas limités : oreilles d’elfe, tatouages, cornes… donc pas pour tout le monde.`
     },
     {
       word: `Cités souterraines`,
       desc: `Espaces aménagés en sous-sol pour accueillir les Égrégores non-intégrables (ENI) et leur permettre de vivre sans briser le Secret.`
     },
     {
+      word: `Communautés`,
+      desc: `Groupes d’Égrégores définis par une homogénéité linguistique et/ou territoriale, chargés de gérer la population et le Secret.`
+    },
+    {
       word: `Conseil Suprême`,
-      desc: `Instance exécutive supracommunautaire composée des Président·es Communautaires.`
+      desc: `Instance exécutive supracommunautaire composée des Président·es Communautaires. Supervise l'Agence de Protection des Rêveur·ses (APR).`
     }
   ],
   d: [
@@ -97,7 +101,7 @@ const abcbook = {
       desc: `Courant politique du Parti Fondamentaliste. Les interventionnistes sont une branche au sein des fondamentalistes qui prône une intervention active et directe (tout en conservant le Secret) des Égrégores dans les affaires rêveuses (politiques entre autres). `
     },
     {
-      word: `Isolationnistes`,
+      word: `Isolationnistes (Communautaristes)`,
       desc: `Courant politique égrégore. Leur objectif : créer un territoire à part, coupé du monde rêveur. ENI et intégrables y vivraient au grand jour, sans contact avec le monde rêveur, avec un risque de rupture du Secret.`
     },
   ],
@@ -140,7 +144,7 @@ const abcbook = {
     },
     {
       word: `Parlement Suprême`,
-      desc: `Instance législative supracommunautaire et internationale définissant les grandes règles de la société égrégore.`
+      desc: `Instance législative supracommunautaire et internationale définissant les grandes règles de la société égrégore. Il est composé de 100 élu·es venant des différents Parlements Communautaires.`
     },
     {
       word: `Ploppage`,
@@ -149,6 +153,14 @@ const abcbook = {
     {
       word: `Plopper`,
       desc: `Se dit des Egrégores quand ielles apparaissent de nulle part dans le monde réel pour la première fois.`
+    },
+    {
+      word: `Politique`,
+      desc: `Les partis politiques égrégores ont comme point de départ leur divergence sur l’attitude à adopter quant au Secret (et donc quant aux ENI). En voici une version courte et volontairement biaisée :<br>
+Fondamentalistes : Le Secret avant tout. Les Cités Souterraines restent la seule vraie (et la moins pire) solution. Les interventionnistes sont une branche au sein des fondamentalistes qui prône une intervention active et directe (tout en conservant le Secret) des Égrégores dans les affaires rêveuses (politiques entre autres).<br>
+Révélationnistes : Révélons le Secret ! Oui, on bloque la naissance de futur·es Égrégores, mais autant permettre aux Égrégores intégrables et non intégrables existant·es de vivre de manière décente et au grand jour. Les ENI pourront donc vivre au grand jour, comme le reste de la Communauté.<br>
+Asphaleia : Comme les Révélationnistes, mais avec l’ambition de prendre le pouvoir sur les populations rêveuses, afin de rendre aux Égrégores leur place légitime. La situation est stagnante depuis des siècles, rien ne bouge dans les Communautés ou dans les Cités et s’il faut passer par la force, qu’il en soit ainsi.<br>
+Isolationnistes : Créer un territoire à part, coupé du monde rêveur. ENI et intégrables y vivraient au grand jour, sans contact avec le monde rêveur, avec un risque limité de rupture du Secret.`
     },
     {
       word: `Président·e Communautaire`,
