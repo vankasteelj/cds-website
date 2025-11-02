@@ -259,6 +259,9 @@
   font-size: 20px;
   color: var(--noir-cds);
 }
+.ag-timeline-card_desc br {
+  margin-bottom: 5px;
+}
 .ag-timeline-card_popup {
   opacity: .6;
   right: 5px;
