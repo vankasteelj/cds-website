@@ -14,7 +14,7 @@ const timeline = [
   {
     date: '2024',
     title: '22 avril 2024',
-    content: 'Des affiches "Asphaleia sera entendue" ont été retrouvées placardées partout dans les Cités souterraines, notamment à Latet et Fondcombes.',
+    content: 'Des affiches "Asphaleia sera entendue" ont été retrouvées placardées partout dans les Cités souterraines, notamment à Latet et Fondcombe.',
     popup_type: `image`, 
     popup_title: `Lire l'article de la Gazette`, 
     popup_content: `./images/gazette/20240422_asphaleia.jpg`
