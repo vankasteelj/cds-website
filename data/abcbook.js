@@ -188,7 +188,7 @@ Isolationnistes : Créer un territoire à part, coupé du monde rêveur. ENI et 
     },
     {
       word: `Secret`,
-      desc: `Principe fondamental de la société égrégore : car si un·e Rêveur·se découvre l’existence des Égrégores et devient Éveillé·e, iel ne peut plus générer de Songes. Les Égrégores ne peuvent donc plus replopper ni utiliser leurs pouvoirs. Si le Secret est brisé, plus aucun Égrégores ne pourra plopper.`
+      desc: `Principe fondamental de la société égrégore : car si un·e Rêveur·se découvre l’existence des Égrégores et devient Éveillé·e, iel ne peut plus générer de Songes. Les Égrégores ne peuvent donc plus replopper ni utiliser leurs pouvoirs. Si le Secret est brisé, plus aucun Égrégore ne pourra plopper.`
     }
   ],
   v: [
