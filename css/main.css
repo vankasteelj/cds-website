@@ -27,10 +27,6 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-weight: 500;
 }
 
-p {
-  font-size: 18px;
-}
-
 /* style */
 @font-face {
   font-family: 'OpenDyslexic';
@@ -52,6 +48,59 @@ body {
   width: 70%;
   margin: 0 auto;
 }
+
+#intro {
+  height: 250px;
+  width: 100%;
+  margin: 30px 0;
+  padding: 30px;
+  border: 2px solid var(--bleu-cds);
+  border-radius: 5px;
+  display: flex;
+}
+#intro .image {
+  background-image: url(../images/logo-black.png);
+  width: 33%;
+  height: 186px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#intro .legende {
+  width: 67%;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  height: 186px;
+  align-content: center;
+}
+#description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#inspiration {
+  width: 70%;
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  #intro {
+    height: 220px;
+  }
+  #intro .image {
+    height: 156px;
+  }
+  #intro .legende {
+    font-size: 23px;
+    height: 156px;
+  }
+  .incipit {
+    font-size: 21px;
+  }
+}
+
 #noscript {
   width: 100vw;
   height: 100vh;
