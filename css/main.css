@@ -428,7 +428,7 @@ input:checked + .slider:before {
   flex: 100%;
   font-size: 12px;
 }
-.event .countdown {
+.event .message {
   position: absolute;
   top: 140px;
   background: rgba(0,0,0,.6);
