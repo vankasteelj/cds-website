@@ -1,3 +1,2 @@
-accueil: présentation courte que c'est un gn belge (mots clés) + les prochains événements
 univers: docs univers et les publis picploc
 nos événements (TO): event
