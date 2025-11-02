@@ -10,7 +10,7 @@ const abcbook = {
     },
     {
       word: `APR (Agence de Protection des Rêveur·ses)`,
-      desc: `Organisme indépendant chargé d’assurer la sécurité des Rêveur·ses et de protéger le Secret.`
+      desc: `Organisme international et indépendant des Communautés, chargé d’assurer la sécurité des Rêveur·ses et de protéger le Secret.`
     },
     {
       word: `Artefact`,
