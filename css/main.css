@@ -59,7 +59,6 @@ body {
   display: flex;
 }
 #intro .image {
-  background-image: url(../images/logo-black.png);
   width: 33%;
   height: 186px;
   background-size: contain;
