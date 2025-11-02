@@ -313,6 +313,107 @@ input:checked + .slider:before {
   font-size: .8em;
 }
 
+/* events */
+#generated_events {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 450px;
+  overflow-x: scroll;
+}
+.event {
+  width: 300px;
+  height: 400px;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  background-color: #fff;
+  transition: all .5s;
+  cursor: pointer;
+  position: relative;
+}
+.event:hover>.background-image {
+  background-size: 101% !important;
+  filter: brightness(1.15) grayscale(0) opacity(1) !important;
+}
+.event .background-image {
+  width: 300px;
+  height: 300px;
+  background-size: 100%;
+  background-position: center;
+  filter: brightness(1) grayscale(0) opacity(1);
+  border-radius: 5px 5px 0 0;
+  transition: all .5s;
+}
+.event:hover>.description {
+  background: var(--bleu-cds);
+  color: #fff;
+}
+.event .description {
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+  color: var(--bleu-cds);
+  background: var(--main-bg);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0 0 5px 5px;
+  transition: all .3s;
+}
+.event .description .title {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+  flex: 100%;
+}
+.event .description .subtitle {
+  flex: 100%;
+}
+.event .description .date {
+  flex: 100%;
+  font-size: 12px;
+}
+.event .countdown {
+  position: absolute;
+  top: 140px;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  width: 300px;
+  white-space: nowrap;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  font-family: monospace !important;
+  font-weight: 600;
+  display: none;
+}
+.event .red-corner {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 55px solid #e11e2d;
+    border-left: 55px solid transparent;
+}
+.event .ended {
+    position: absolute;
+    right: -3px;
+    top: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); 
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -sand-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 @media (max-width: 800px) {
   nav a {
     flex: 50%;

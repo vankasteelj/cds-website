@@ -14,7 +14,7 @@ const header = `
   <a id="univers" href="univers.html">Univers</a>
   <a id="timeline" href="timeline.html">Timeline</a>
   <a id="documents" href="documents.html">Documents</a>
-  <a id="evenements">Nos événements</a>
+  <a id="evenements" href="evenements.html">Nos événements</a>
   <a id="equipe" href="equipe.html">Qui sommes-nous&nbsp;?</a>
 </nav>
 `
