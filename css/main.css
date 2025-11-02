@@ -7,6 +7,7 @@
   --bleu-dimmed: #d9e1f9;
   --bleu-dimmedstrong: #ecf0fc;
   --main-bg: #fafafa;
+  --rose: #dd43aa;
 }
 h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-family: "Ubuntu", sans-serif;
@@ -18,12 +19,16 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
 
 .incipit {
   font-family: "Ubuntu", sans-serif;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--bleu-cds);
   text-align: center;
   font-style: italic;
   padding: 30px;
   font-weight: 500;
+}
+
+p {
+  font-size: 18px;
 }
 
 /* style */
@@ -135,6 +140,7 @@ img {
   background: var(--main-bg);
   text-align: center;
   box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  border-radius: 5px;
 }
 #popupcontent img {
   max-width: none;
@@ -339,7 +345,6 @@ input:checked + .slider:before {
   width: 300px;
   height: 300px;
   background-size: 100%;
-  background-position: center;
   filter: brightness(1) grayscale(0) opacity(1);
   border-radius: 5px 5px 0 0;
   transition: all .5s;

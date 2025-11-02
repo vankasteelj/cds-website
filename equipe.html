@@ -5,6 +5,7 @@
     <meta content="width=device-width" name="viewport" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/equipe.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +17,22 @@
     <script async src="header.js"></script>
 
     <div id="main">
-      <img src="./images/equipe/orgas.jpg">
-      <img src="./images/equipe/justine.jpg">
-      <img src="./images/equipe/kevin.jpg">
-      <img src="./images/equipe/laura.jpg">
-      <img src="./images/equipe/alex.jpg">
-      <img src="./images/equipe/pilou.jpg">
-      <img src="./images/equipe/sara.jpg">
-      <p>Et on n'oublie bien sûr pas les ancien·nes orgas qui nous ont bien aidés par le passé&nbsp;: Nathan, Julien et Lucas.</p>
+      <div id="popup">
+        <div id="popupbackground">
+          <div id="popupclose">&#x2716;</div>
+        </div>
+        <div id="popupcontent"></div>
+      </div>
+      
+      <div id="orgas">
+        <h2>Vos orgas</h2>
+        <div class="row">
+          <!-- orga comes here -->
+        </div>
+        <script async src="./js/equipe.js"></script>
+
+        <p>Et on n'oublie bien sûr pas les ancien·nes orgas qui nous ont bien aidés par le passé&nbsp;: Nathan, Julien et Lucas.</p>
+      </div>
     </div>
 
     <footer id="footer"></footer>
