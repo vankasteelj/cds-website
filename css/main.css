@@ -13,10 +13,6 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
   font-family: "Ubuntu", sans-serif;
 }
 
-#main.dyslexic * {
-  font-family: 'OpenDyslexic' !important;
-}
-
 .incipit {
   font-family: "Ubuntu", sans-serif;
   font-size: 23px;
@@ -415,17 +411,19 @@ input:checked + .slider:before {
   transition: all .3s;
 }
 .event .description .title {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", sans-serif !important;
   font-weight: 500;
   font-size: 23px;
   flex: 100%;
 }
 .event .description .subtitle {
   flex: 100%;
+  font-family: 'Roboto', sans-serif !important;
 }
 .event .description .date {
   flex: 100%;
   font-size: 12px;
+  font-family: 'Roboto', sans-serif !important;
 }
 .event .message {
   position: absolute;
@@ -458,6 +456,7 @@ input:checked + .slider:before {
     text-transform: uppercase;
     color: white;
     font-size: 12px;
+    font-family: 'Roboto', sans-serif !important;
     font-weight: bold;
     z-index: 10;
     -ms-transform: rotate(45deg);
@@ -467,6 +466,8 @@ input:checked + .slider:before {
     -sand-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+/* nav */
 
 @media (max-width: 800px) {
   nav a {
@@ -486,4 +487,9 @@ input:checked + .slider:before {
     height: 30px;
     filter: invert(1)
   }
+}
+
+/* dyslexic mode */
+#main.dyslexic * {
+  font-family: 'OpenDyslexic';
 }
