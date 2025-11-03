@@ -24,21 +24,17 @@ h1, h2, h3, h4, h5, h6, .ag-timeline-card_point, .ag-timeline-card_meta {
 }
 
 /* style */
-@font-face {
-  font-family: 'OpenDyslexic';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/opendyslexic@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/opendyslexic@latest/latin-400-normal.woff) format('woff');
-  size-adjust: 80%;
-}
-
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background: var(--main-bg);
 }
+
+.ar::before {
+  content: '@';
+}
+
 #main {
   min-height: calc(100vh - 233px);
   width: 70%;
@@ -355,9 +351,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .toggle-label {
-  font-family: 'OpenDyslexic';
+  font-family: 'Times New Roman', serif;
   position: relative;
-  margin-left: -135px;
+  margin-left: -112px;
   top: -2px;
   color: var(--bleu-dimmed);
   font-size: .8em;
@@ -491,5 +487,5 @@ input:checked + .slider:before {
 
 /* dyslexic mode */
 #main.dyslexic * {
-  font-family: 'OpenDyslexic';
+  font-family: 'Times New Roman', serif;
 }
